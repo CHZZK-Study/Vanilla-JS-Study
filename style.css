@@ -36,7 +36,7 @@ header {
 }
 
 .nav li:hover {
-  color: hsl(205, 78%, 60%);
+  color: hsl(205, 78%, 60%) !important;
 }
 
 .title {
