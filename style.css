@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  background-color: #ffffff;
+}
+
+nav {
+  width: 100vw;
+  background-color: #f0f0f0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-size: medium;
+  margin: 0 20px;
+}
