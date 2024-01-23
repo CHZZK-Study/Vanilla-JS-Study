@@ -9,4 +9,5 @@
 - [x] `Click Me` 버튼과 색상 코드를 알려주는 text 생성
 - [x] `simple` 기능
 - [x] 옵션 전환 기능
-- [ ] `hex` 기능
+- [x] `hex` 기능
+- [x] 옵션에 따른 simple, hex text 색상 변경
