@@ -4,20 +4,26 @@ const colorSpan = document.querySelector('#color');
 const background = document.querySelector('#container');
 const clickBtn = document.querySelector('#clickBtn');
 
-let isSimple = true;
+const SELECTED = 'hsl(205, 78%, 60%)';
+const UNSELECTED = '#222';
+const HEX = 16;
+const RGB = 256;
+
+let isSimpleSelected = true;
 
 const createRandomRgb = () => {
-  return Array.from({ length: 3 }, () => Math.floor(Math.random() * 256));
+  return Array.from({ length: 3 }, () => Math.floor(Math.random() * RGB));
 };
 
 const convertRgbToHex = () => {
   const rgb = createRandomRgb();
   const hex = rgb.map((color) => {
-    const hex = color.toString(16);
+    const hex = color.toString(HEX);
     return hex.length === 1 ? `0${hex}` : hex;
   });
   return `#${hex.join('')}`;
 };
+
 const setColor = (isSimple) => {
   const color = isSimple
     ? `rbga(${createRandomRgb().join(', ')})`
@@ -26,16 +32,13 @@ const setColor = (isSimple) => {
   colorSpan.innerText = color;
 };
 
-window.addEventListener('load', setColor);
-simpleBtn.addEventListener('click', () => {
-  simpleBtn.style.color = 'hsl(205, 78%, 60%)';
-  hexBtn.style.color = '#222';
-  isSimple = true;
-});
-hexBtn.addEventListener('click', () => {
-  hexBtn.style.color = 'hsl(205, 78%, 60%)';
-  simpleBtn.style.color = '#222';
-  isSimple = false;
-});
+const changeBtn = (isSimple) => {
+  simpleBtn.style.color = isSimple ? SELECTED : UNSELECTED;
+  hexBtn.style.color = isSimple ? UNSELECTED : SELECTED;
+  isSimpleSelected = isSimple;
+};
 
-clickBtn.addEventListener('click', () => setColor(isSimple));
+window.addEventListener('load', setColor);
+simpleBtn.addEventListener('click', () => changeBtn(true));
+hexBtn.addEventListener('click', () => changeBtn(false));
+clickBtn.addEventListener('click', () => setColor(isSimpleSelected));
