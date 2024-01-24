@@ -26,7 +26,7 @@ const convertRgbToHex = () => {
 
 const setColor = (isSimple) => {
   const color = isSimple
-    ? `rbga(${createRandomRgb().join(', ')})`
+    ? `rgba(${createRandomRgb().join(', ')})`
     : convertRgbToHex();
   background.style.backgroundColor = color;
   colorSpan.innerText = color;
@@ -38,7 +38,7 @@ const changeBtn = (isSimple) => {
   isSimpleSelected = isSimple;
 };
 
-window.addEventListener('load', setColor);
+window.addEventListener('load', setColor(isSimpleSelected));
 simpleBtn.addEventListener('click', () => changeBtn(true));
 hexBtn.addEventListener('click', () => changeBtn(false));
 clickBtn.addEventListener('click', () => setColor(isSimpleSelected));
