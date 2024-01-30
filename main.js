@@ -4,6 +4,9 @@ let count = 0;
 
 const update = () => {
   htmlCount.innerText = `${count}`;
+  if (count > 0) htmlCount.style.color = "green";
+  if (count < 0) htmlCount.style.color = "red";
+  if (count === 0) htmlCount.style.color = "black";
 };
 
 const counter = (e) => {
