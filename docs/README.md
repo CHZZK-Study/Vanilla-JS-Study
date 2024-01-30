@@ -6,7 +6,7 @@
 
 ### 구현 전 기능 목록
 
-- [ ] html 및 css 설정
+- [x] html 및 css 설정
 - [ ] increase 기능
 - [ ] decrease 기능
 - [ ] reset 기능
