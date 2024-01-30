@@ -7,7 +7,7 @@
 ### 구현 전 기능 목록
 
 - [x] html 및 css 설정
-- [ ] increase 기능
-- [ ] decrease 기능
-- [ ] reset 기능
+- [x] increase 기능
+- [x] decrease 기능
+- [x] reset 기능
 - [ ] 양수 및 음수에 따라 텍스트 색상 변환 기능
