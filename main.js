@@ -12,9 +12,9 @@ const update = () => {
 
 const counter = (e) => {
   const click = e.target.classList;
-  if (click.contains("decrease")) count--;
+  if (click.contains("decrease")) count -= 1;
   if (click.contains("reset")) count = 0;
-  if (click.contains("increase")) count++;
+  if (click.contains("increase")) count += 1;
   update();
 };
 
