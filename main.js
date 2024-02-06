@@ -28,27 +28,32 @@ const reviews = [
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi eligendi odit ducimus ",
   },
 ];
-
 const btns = document.getElementById("btn-container");
 const img = document.getElementById("img");
 const reviewName = document.getElementById("name");
 const job = document.getElementById("job");
 const text = document.getElementById("text");
+
 let currentReview = 0;
 
-const show = () => {
+const prev = () => {
+  currentReview -= 1;
   if (currentReview < 0) currentReview = 0;
-  if (currentReview > reviews.length - 1) currentReview = reviews.length - 1;
-  const review = reviews[currentReview];
-  img.src = review.img;
-  reviewName.innerText = review.name;
-  job.innerText = review.job;
-  text.innerText = review.text;
+  show();
 };
 
-window.addEventListener("DOMContentLoaded", show());
+const next = () => {
+  currentReview += 1;
+  if (currentReview > reviews.length - 1) currentReview = reviews.length - 1;
+  show();
+};
 
 const random = () => {
+  currentReview = createRandom();
+  show();
+};
+
+const createRandom = () => {
   let random = currentReview;
   while (random === currentReview) {
     random = Math.floor(Math.random() * reviews.length);
@@ -57,11 +62,19 @@ const random = () => {
   return random;
 };
 
-const clickHandle = (e) => {
-  if (e.target.id === "prev") currentReview -= 1;
-  if (e.target.id === "next") currentReview += 1;
-  if (e.target.id === "random") currentReview = random();
-  show();
+const show = () => {
+  const review = reviews[currentReview];
+  img.src = review.img;
+  reviewName.innerText = review.name;
+  job.innerText = review.job;
+  text.innerText = review.text;
 };
 
+const clickHandle = (e) => {
+  if (e.target.id === "prev") prev();
+  if (e.target.id === "next") next();
+  if (e.target.id === "random") random();
+};
+
+window.addEventListener("DOMContentLoaded", show());
 btns.addEventListener("click", clickHandle);

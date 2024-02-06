@@ -9,14 +9,14 @@
 }
 
 .review {
-  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   width: 600px;
-  background-color: #ffffff;
   margin-top: 20px;
+  padding: 20px;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgb(190, 205, 218);
 }
@@ -33,9 +33,9 @@
 
 .img {
   position: relative;
+  margin-bottom: 20px;
   width: 120px;
   height: 120px;
-  margin-bottom: 20px;
   border-radius: 50%;
 }
 
@@ -77,16 +77,15 @@ img {
 }
 
 .job {
+  color: dodgerblue;
   font-size: 11px;
   text-transform: uppercase;
-
-  color: dodgerblue;
 }
 
 .review-content {
-  font-size: 13px;
   height: 100px;
   padding: 10px;
+  font-size: 13px;
 }
 
 #prev {
@@ -100,10 +99,10 @@ button i {
 
 #random {
   margin-top: 10px;
-  border: 2px solid skyblue;
-  font-weight: bold;
   padding: 4px;
+  border: 2px solid skyblue;
   border-radius: 10px;
-  font-size: 11px;
   background-color: aliceblue;
+  font-size: 11px;
+  font-weight: bold;
 }
