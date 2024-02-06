@@ -94,6 +94,7 @@ img {
 
 button i {
   color: skyblue;
+  pointer-events: none;
 }
 
 #random {

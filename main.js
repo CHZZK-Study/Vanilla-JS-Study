@@ -28,3 +28,30 @@ const reviews = [
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi eligendi odit ducimus ",
   },
 ];
+
+const btns = document.getElementById("btn-container");
+const img = document.getElementById("img");
+const reviewName = document.getElementById("name");
+const job = document.getElementById("job");
+const text = document.getElementById("text");
+let currentReview = 0;
+
+const show = () => {
+  if (currentReview < 0) currentReview = 0;
+  if (currentReview > reviews.length - 1) currentReview = reviews.length - 1;
+  const review = reviews[currentReview];
+  img.src = review.img;
+  reviewName.innerText = review.name;
+  job.innerText = review.job;
+  text.innerText = review.text;
+};
+
+window.addEventListener("DOMContentLoaded", show());
+
+const clickHandle = (e) => {
+  if (e.target.id === "prev") currentReview -= 1;
+  if (e.target.id === "next") currentReview += 1;
+  show();
+};
+
+btns.addEventListener("click", clickHandle);
