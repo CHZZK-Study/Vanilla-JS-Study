@@ -48,9 +48,15 @@ const show = () => {
 
 window.addEventListener("DOMContentLoaded", show());
 
+const random = () => {
+  const random = Math.floor(Math.random() * reviews.length);
+  return random;
+};
+
 const clickHandle = (e) => {
   if (e.target.id === "prev") currentReview -= 1;
   if (e.target.id === "next") currentReview += 1;
+  if (e.target.id === "random") currentReview = random();
   show();
 };
 
