@@ -49,7 +49,11 @@ const show = () => {
 window.addEventListener("DOMContentLoaded", show());
 
 const random = () => {
-  const random = Math.floor(Math.random() * reviews.length);
+  let random = currentReview;
+  while (random === currentReview) {
+    random = Math.floor(Math.random() * reviews.length);
+  }
+
   return random;
 };
 
