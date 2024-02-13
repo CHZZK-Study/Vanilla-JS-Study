@@ -1,3 +1,12 @@
+@keyframes dropdown {
+  to {
+    transform: translateY(-100%);
+  }
+  from {
+    transform: translateY(0);
+  }
+}
+
 .wrap {
   width: 100vw;
   height: 100vh;
@@ -5,11 +14,10 @@
   letter-spacing: 2px;
 }
 
-#open {
+.wide {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   width: 100%;
   height: 80px;
   background-color: white;
@@ -17,16 +25,62 @@
   padding: 0px 20px;
 }
 
-#open ul {
+.wide ul {
   display: flex;
   justify-content: space-between;
 }
 
-#open ul li {
+.wide ul li {
   margin: 0 10px;
 }
 
-#open ul:last-child li {
+.wide .brand-link li {
   font-size: 13px;
   color: skyblue;
+}
+
+.menu li {
+  display: none;
+}
+
+/* 창 너비 50% 이하일 때 css */
+.fold ul:nth-child(2) {
+  display: none;
+}
+
+.fold ul:nth-child(3) {
+  display: none;
+}
+
+.fold .menu li {
+  display: block;
+}
+
+.menu {
+  cursor: pointer;
+  transition: 0.5s;
+  color: skyblue;
+}
+
+.menu:hover {
+  transform: rotate(90deg);
+  color: black;
+}
+
+.drop {
+  width: 100vw;
+  height: 160px;
+  background-color: white;
+  transform: translateY(-150%);
+  transition: 0.5s;
+}
+
+.drop ul li {
+  height: 40px;
+  padding: 0px 10px;
+  line-height: 40px;
+}
+
+.hide {
+  transform: translateY(0);
 }
