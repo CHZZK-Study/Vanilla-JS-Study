@@ -1,19 +1,16 @@
-const menu = document.querySelector(".menu");
-const drop = document.querySelector(".drop");
-const wide = document.querySelector(".wide");
-const dropDown = () => {
-  drop.classList.toggle("hide");
+const menuIcon = document.querySelector(".menuIcon");
+
+const nav = document.querySelector(".nav");
+
+const dropDown = (e) => {
+  nav.classList.toggle("toggle");
 };
 
-const resize = (e) => {
-  const width = e.currentTarget.innerWidth;
-  if (width < screen.width * 0.5) {
-    wide.classList.add("fold");
-  } else if (width >= screen.width * 0.5) {
-    wide.classList.remove("fold");
-    drop.classList.remove("hide");
+const removeMenuBar = (e) => {
+  if (e.target.nodeName === "BODY") {
+    nav.classList.remove("toggle");
   }
 };
 
-menu.addEventListener("click", dropDown);
-window.addEventListener("resize", resize);
+menuIcon.addEventListener("click", dropDown);
+window.addEventListener("mousemove", removeMenuBar);
