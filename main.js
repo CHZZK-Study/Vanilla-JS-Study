@@ -7,7 +7,12 @@ const dropDown = () => {
 
 const resize = (e) => {
   const width = e.currentTarget.innerWidth;
-  width < screen.width * 0.5 ? wide.classList.add("fold") : wide.classList.remove("fold");
+  if (width < screen.width * 0.5) {
+    wide.classList.add("fold");
+  } else if (width >= screen.width * 0.5) {
+    wide.classList.remove("fold");
+    drop.classList.remove("hide");
+  }
 };
 
 menu.addEventListener("click", dropDown);
