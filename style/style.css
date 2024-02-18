@@ -28,6 +28,10 @@ body {
 }
 
 /* 사이드바 css */
+.hide {
+  transform: translateX(-400px);
+}
+
 .sideContainer {
   position: relative;
   z-index: 1;
@@ -35,6 +39,7 @@ body {
   height: 100vh;
   background-color: #ffffff;
   transition: 0.4s;
+  overflow: hidden;
 }
 
 .sideHeader {
