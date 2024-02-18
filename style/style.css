@@ -12,7 +12,9 @@ body {
 }
 
 .menuIcon {
-  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
   margin: 30px;
   font-size: 20px;
   color: dodgerblue;
@@ -27,9 +29,12 @@ body {
 
 /* 사이드바 css */
 .sideContainer {
+  position: relative;
+  z-index: 1;
   width: 400px;
   height: 100vh;
   background-color: #ffffff;
+  transition: 0.4s;
 }
 
 .sideHeader {
@@ -38,8 +43,8 @@ body {
 
 .sideHeader i {
   float: right;
-  color: #ff0000;
-  font-size: 20px;
+  color: #ac0000;
+  font-size: 25px;
   cursor: pointer;
   transition: 0.5s;
 }
@@ -69,7 +74,7 @@ body {
 .brand-links {
   position: absolute;
   bottom: 0;
-  width: 400px;
+  width: 100%;
   padding: 30px;
 }
 
@@ -87,4 +92,10 @@ body {
 
 .brand-links li:hover {
   color: #000000;
+}
+
+@media screen and (max-width: 675px) {
+  .sideContainer {
+    width: 100vw;
+  }
 }
