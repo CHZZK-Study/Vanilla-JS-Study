@@ -53,6 +53,7 @@ ul {
   background-color: #fff;
   display: flex;
   flex-direction: column;
+  transition: all 0.7s linear;
   transform: translate(-100%);
 }
 

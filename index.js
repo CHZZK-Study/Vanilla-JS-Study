@@ -4,12 +4,10 @@ const sidebarCloseButton = document.getElementById('sidebarCloseButton');
 
 let show = false;
 
-sidebarToggle.addEventListener('click', () => {
+const toggleSidebar = () => {
   sidebar.style.transform = show ? 'translate(-100%)' : 'translate(0)';
   show = !show;
-});
+};
 
-sidebarCloseButton.addEventListener('click', () => {
-  sidebar.style.transform = 'translate(-100%)';
-  show = false;
-});
+sidebarToggle.addEventListener('click', toggleSidebar);
+sidebarCloseButton.addEventListener('click', toggleSidebar);
