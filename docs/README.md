@@ -6,4 +6,4 @@
 ## 구현 전 기능 목록
 
 - [x] Open modal 버튼 만들기
-- [ ] Open modal 버튼 클릭시 모달 띄우기
+- [x] Open modal 버튼 클릭시 모달 띄우기
