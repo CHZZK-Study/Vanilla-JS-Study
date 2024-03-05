@@ -16,19 +16,20 @@ article {
 
 h1 {
   margin: 80px 0 50px 0;
-  text-align: center;
   color: goldenrod;
+  text-align: center;
 }
 
 .box {
-  background-color: white;
-  margin-bottom: 40px;
-  border-radius: 10px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   width: 500px;
   height: 80px;
-  overflow: hidden;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   letter-spacing: 1px;
+
+  overflow: hidden;
 }
 
 .open {
@@ -38,15 +39,16 @@ h1 {
 .box ul {
   display: flex;
   justify-content: space-between;
-  margin: 0 30px;
   height: 80px;
-  line-height: 80px;
+  margin: 0 30px;
   border-bottom: 1px solid gainsboro;
+  line-height: 80px;
 }
 
 .toggle i {
-  font-size: 22px;
   color: goldenrod;
+  font-size: 22px;
+
   cursor: pointer;
   transition: 0.3s linear;
 }

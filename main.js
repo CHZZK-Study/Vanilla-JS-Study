@@ -1,31 +1,42 @@
 const container = document.getElementById("container");
 const boxs = document.querySelectorAll(".box");
 const icons = document.querySelectorAll(".fa-regular");
+const minus = "fa-square-minus";
+const plus = "fa-square-plus";
 
-const toggle = (e) => {
-  console.log(e.target);
+const controlIcon = (target) => {
   icons.forEach((icon) => {
-    if (e.target !== icon && icon.classList.contains("fa-square-minus")) {
-      icon.classList.remove("fa-square-minus");
-      icon.classList.add("fa-square-plus");
+    if (target !== icon && icon.classList.contains(minus)) {
+      icon.classList.remove(minus);
+      icon.classList.add(plus);
     }
   });
-  const elem = e.target.closest(".box");
-  elem.classList.toggle("open");
 
-  if (e.target.classList.contains("fa-square-plus")) {
-    e.target.classList.remove("fa-square-plus");
-    e.target.classList.add("fa-square-minus");
-  } else if (e.target.classList.contains("fa-square-minus")) {
-    e.target.classList.remove("fa-square-minus");
-    e.target.classList.add("fa-square-plus");
+  if (target.classList.contains(plus)) {
+    target.classList.remove(plus);
+    target.classList.add(minus);
+  } else if (target.classList.contains(minus)) {
+    target.classList.remove(minus);
+    target.classList.add(plus);
   }
+};
 
+const controlBox = (target) => {
   boxs.forEach((box) => {
-    if (elem !== box && box.classList.contains("open")) {
+    if (target !== box && box.classList.contains("open")) {
       box.classList.remove("open");
     }
   });
+
+  target.classList.toggle("open");
+};
+
+const toggle = (e) => {
+  const targetBox = e.target.closest(".box");
+  const targetIcon = e.target;
+
+  controlIcon(targetIcon);
+  controlBox(targetBox);
 };
 
 container.addEventListener("click", toggle);
