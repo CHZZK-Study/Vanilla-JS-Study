@@ -10,20 +10,17 @@ body {
   background-color: aliceblue;
 }
 
-section {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+article {
+  margin: auto;
 }
 
 h1 {
-  margin-bottom: 50px;
+  margin: 80px 0 50px 0;
   text-align: center;
   color: goldenrod;
 }
 
-article {
+.box {
   background-color: white;
   margin-bottom: 40px;
   border-radius: 10px;
@@ -34,7 +31,11 @@ article {
   letter-spacing: 1px;
 }
 
-article ul {
+.open {
+  height: auto;
+}
+
+.box ul {
   display: flex;
   justify-content: space-between;
   margin: 0 30px;
@@ -43,14 +44,14 @@ article ul {
   border-bottom: 1px solid gainsboro;
 }
 
-article i {
+.toggle i {
   font-size: 22px;
   color: goldenrod;
   cursor: pointer;
   transition: 0.3s linear;
 }
 
-i:hover {
+.toggle:hover i {
   transform: rotate(90deg);
 }
 
