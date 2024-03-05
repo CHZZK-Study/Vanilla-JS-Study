@@ -28,6 +28,9 @@ header {
 }
 
 .faq_list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   > li {
     width: 400px;
     display: flex;
@@ -53,6 +56,10 @@ header {
 
     > hr {
       border: 1px solid #030303;
+    }
+
+    > p {
+      display: none;
     }
   }
 }
