@@ -11,7 +11,6 @@ const controlIcon = (target) => {
       icon.classList.add(plus);
     }
   });
-
   if (target.classList.contains(plus)) {
     target.classList.remove(plus);
     target.classList.add(minus);
@@ -34,9 +33,10 @@ const controlBox = (target) => {
 const toggle = (e) => {
   const targetBox = e.target.closest(".box");
   const targetIcon = e.target;
-
-  controlIcon(targetIcon);
-  controlBox(targetBox);
+  if (targetIcon.classList.contains("fa-regular")) {
+    controlIcon(targetIcon);
+    controlBox(targetBox);
+  }
 };
 
 container.addEventListener("click", toggle);
