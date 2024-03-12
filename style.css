@@ -46,11 +46,14 @@ article img {
 .menu-item {
   list-style: none;
   display: flex;
+  flex-direction: column;
   gap: 10px;
+  padding: 0;
+  margin: 20px;
 }
 
 .menu-header {
-  width: 300px;
+  width: 350px;
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -59,14 +62,49 @@ article img {
 }
 
 .menu-dscrp {
-  width: 300px;
+  width: 350px;
   padding: 20px;
   text-align: start;
+}
+
+.menuboard {
+  display: inline-block;
+  margin: auto;
+}
+
+@media screen and (min-width: 765px) {
+  article img {
+    width: 350px;
+    height: 300px;
+  }
+
+  .menu-item {
+    flex-direction: row;
+  }
+
+  .menu-header {
+    width: 400px;
+  }
+
+  .menu-dscrp {
+    width: 400px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
   .menuboard {
     display: flex;
     justify-content: center;
+  }
+  article img {
+    width: 300px;
+    height: 250px;
+  }
+  .menu-header {
+    width: 300px;
+  }
+
+  .menu-dscrp {
+    width: 300px;
   }
 }
