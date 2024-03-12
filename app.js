@@ -82,10 +82,11 @@ const menus = [
 ];
 
 const menuBoard = document.querySelector(".menuboard");
+const category = document.querySelector(".category");
 
-window.addEventListener("DOMContentLoaded", () => {
+const loadData = () => {
   let displayMenu = menus.map((menu) => {
-    return `<article>
+    const htmlTag = `<article>
     <ul class="menu-item">
       <li><img src="${menu.img}" alt="menu-img" /></li>
       <li>
@@ -99,7 +100,43 @@ window.addEventListener("DOMContentLoaded", () => {
       </li>
     </ul>
   </article>`;
+
+    return htmlTag;
   });
   displayMenu = displayMenu.join("");
   menuBoard.innerHTML = displayMenu;
+};
+
+const clickCategory = (category) => {
+  let displayMenu = menus.map((menu) => {
+    const htmlTag = `<article>
+    <ul class="menu-item">
+      <li><img src="${menu.img}" alt="menu-img" /></li>
+      <li>
+        <ul class="menu-header">
+          <li>${menu.title}</li>
+          <li>$${menu.price}</li>
+        </ul>
+        <p class="menu-dscrp">
+        ${menu.desc}
+        </p>
+      </li>
+    </ul>
+  </article>`;
+    if (menu.category === category) {
+      return htmlTag;
+    }
+  });
+  displayMenu = displayMenu.join("");
+  menuBoard.innerHTML = displayMenu;
+};
+
+window.addEventListener("DOMContentLoaded", loadData);
+category.addEventListener("click", (e) => {
+  const target = e.target.id;
+  if (target === "all") {
+    loadData();
+  } else if (target) {
+    clickCategory(target);
+  }
 });
