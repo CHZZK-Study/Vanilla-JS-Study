@@ -94,11 +94,12 @@ article img {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1435px) {
   .menuboard {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 20px;
   }
   article img {
     width: 300px;
