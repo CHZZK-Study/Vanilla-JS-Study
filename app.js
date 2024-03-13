@@ -84,49 +84,39 @@ const menus = [
 const menuBoard = document.querySelector(".menuboard");
 const category = document.querySelector(".category");
 
+const htmlTagHandle = (menu) => {
+  return `<article>
+  <ul class="menu-item">
+    <li><img src="${menu.img}" alt="menu-img" /></li>
+    <li>
+      <ul class="menu-header">
+        <li>${menu.title}</li>
+        <li>$${menu.price}</li>
+      </ul>
+      <p class="menu-dscrp">
+      ${menu.desc}
+      </p>
+    </li>
+  </ul>
+</article>`;
+};
+
 const loadData = () => {
   let displayMenu = menus.map((menu) => {
-    const htmlTag = `<article>
-    <ul class="menu-item">
-      <li><img src="${menu.img}" alt="menu-img" /></li>
-      <li>
-        <ul class="menu-header">
-          <li>${menu.title}</li>
-          <li>$${menu.price}</li>
-        </ul>
-        <p class="menu-dscrp">
-        ${menu.desc}
-        </p>
-      </li>
-    </ul>
-  </article>`;
-
+    const htmlTag = htmlTagHandle(menu);
     return htmlTag;
   });
+
   displayMenu = displayMenu.join("");
   menuBoard.innerHTML = displayMenu;
 };
 
 const clickCategory = (category) => {
   let displayMenu = menus.map((menu) => {
-    const htmlTag = `<article>
-    <ul class="menu-item">
-      <li><img src="${menu.img}" alt="menu-img" /></li>
-      <li>
-        <ul class="menu-header">
-          <li>${menu.title}</li>
-          <li>$${menu.price}</li>
-        </ul>
-        <p class="menu-dscrp">
-        ${menu.desc}
-        </p>
-      </li>
-    </ul>
-  </article>`;
-    if (menu.category === category) {
-      return htmlTag;
-    }
+    const htmlTag = htmlTagHandle(menu);
+    if (menu.category === category) return htmlTag;
   });
+
   displayMenu = displayMenu.join("");
   menuBoard.innerHTML = displayMenu;
 };
@@ -134,9 +124,6 @@ const clickCategory = (category) => {
 window.addEventListener("DOMContentLoaded", loadData);
 category.addEventListener("click", (e) => {
   const target = e.target.id;
-  if (target === "all") {
-    loadData();
-  } else if (target) {
-    clickCategory(target);
-  }
+  if (target === "all") loadData();
+  else if (target) clickCategory(target);
 });
