@@ -25,3 +25,44 @@ video {
   font-size: 26px;
   color: white;
 }
+
+.toggle-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 80%);
+}
+
+button {
+  width: 70px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(226, 226, 226);
+  padding: 0;
+}
+
+#toggle-text {
+  display: inline-block;
+  margin-right: 10px;
+  color: rgb(255, 255, 255);
+  transform: translateY(-15px);
+  transition: 0.3s;
+}
+
+#toggle-text i {
+  color: #fff;
+}
+
+#switch {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #ef0107;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#switch:hover {
+  transform: translate(30px);
+}
