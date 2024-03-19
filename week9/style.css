@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+}
+
+section {
+  overflow: hidden;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.text {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  line-height: 100vh;
+  font-size: 26px;
+  color: white;
+}
