@@ -21,8 +21,8 @@ video {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
-  line-height: 100vh;
-  font-size: 26px;
+  line-height: 80vh;
+  font-size: 32px;
   color: white;
 }
 
@@ -30,7 +30,7 @@ video {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 80%);
+  transform: translate(-50%, -50%);
 }
 
 button {
